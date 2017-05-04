@@ -1,12 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_login import LoginManager
 app = Flask(__name__)
+app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
 login_manager = LoginManager()
 login_manager.init_app(app)
 
 @app.route("/")
 def index():
-  return "Hello world!"
+  return render_template('index.jade')
 
-if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=8080)
