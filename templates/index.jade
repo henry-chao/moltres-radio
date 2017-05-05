@@ -12,6 +12,18 @@ html
       nav
         .nav-wrapper
           .brand-logo.center Moltres Radio
+          ul.right
+            {% if current_user.is_authenticated %}
+            li
+              a Hello {{ current_user.username }}
+            li
+              a(href="/logout") Logout
+                i.small.material-icons.left lock_open
+            {% else %}
+            li
+              a(href="/login") Login
+                i.small.material-icons.left person_pin
+            {% endif %}
     .container
       .row
         .col.s12.m12.l12.center-align
