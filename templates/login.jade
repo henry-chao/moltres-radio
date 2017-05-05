@@ -1,38 +1,15 @@
-doctype 5
-html
-  header
-    title Moltres Radio
-    link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
-    link(rel="stylesheet",href="https://fonts.googleapis.com/icon?family=Material+Icons")
-    link(rel="stylesheet",href="{{ main_css }}")
-    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
-  main
-    .navbar-fixed.red.lighten-1
-      nav
-        .nav-wrapper
-          .brand-logo.center Moltres Radio
-          ul.right
-            li
-              a(href="/login") Login
-                i.small.material-icons.left person_pin
-    .container
-      .row.center-align
-        h3 Login to Your Account
-      .row.center-align
-        form.col.s12.m12.l12(action="/auth", method="post")
-          .row
-            .input-field.col.s6.offset-s3
-              input.validate(id="username",type="text",name="username")
-              label(for="username") Username
-          .row
-            .input-field.col.s6.offset-s3
-              input.validate(id="password",type="password",name="password")
-              label(for="password") Password
-          input.waves-effect.waves-light.btn(type="submit") Login
-  footer.page-footer
-    .container.center-align
-      p.white-text Heyo!
-    .footer-copyright
-      .container
-        p Copyright 2017
+extends base
+block content
+  .row.center-align
+    h3 Login to Your Account
+  .row.center-align
+    form.col.s12.m12.l12(action="/auth", method="post")
+      .row
+        .input-field.col.s6.offset-s3
+          input.validate(id="username",type="text",name="username")
+          label(for="username") Username
+      .row
+        .input-field.col.s6.offset-s3
+          input.validate(id="password",type="password",name="password")
+          label(for="password") Password
+      input.waves-effect.waves-light.btn(type="submit") Login

@@ -1,53 +1,22 @@
-doctype 5
-html
-  header
-    title Moltres Radio
-    link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
-    link(rel="stylesheet",href="https://fonts.googleapis.com/icon?family=Material+Icons")
-    link(rel="stylesheet",href="{{ main_css }}")
-    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
-  main
-    .navbar-fixed.red.lighten-1
-      nav
-        .nav-wrapper
-          .brand-logo.center Moltres Radio
-          ul.right
-            {% if current_user.is_authenticated %}
-            li
-              a Hello {{ current_user.username }}
-            li
-              a(href="/logout") Logout
-                i.small.material-icons.left lock_open
-            {% else %}
-            li
-              a(href="/login") Login
-                i.small.material-icons.left person_pin
-            {% endif %}
-    .container
-      .row
-        .col.s12.m12.l12.center-align
-          i.large.material-icons volume_up
-          h3 Listen Now!
-      .row
-        .col.s4.m4.l4.center-align
-          h4 What is this?
-          p
-           | An internet radio for the community,
-           | by the community!
-        .col.s4.m4.l4.center-align
-          h4 What's playing?
-          p
-           | Oh, various things...
-        .col.s4.m4.l4.center-align
-          h4 How can I contribute?
-          p
-           | Create an account and record something
-           | to play on the radio! Or submit a recording
-           | for a longer song.
-  footer.page-footer
-    .container.center-align
-      p.white-text Heyo!
-    .footer-copyright
-      .container
-        p Copyright 2017
+extends base
+block content
+  .row
+    .col.s12.m12.l12.center-align
+      i.large.material-icons volume_up
+      h3 Listen Now!
+  .row
+    .col.s4.m4.l4.center-align
+      h4 What is this?
+      p
+       | An internet radio for the community,
+       | by the community!
+    .col.s4.m4.l4.center-align
+      h4 What's playing?
+      p
+       | Oh, various things...
+    .col.s4.m4.l4.center-align
+      h4 How can I contribute?
+      p
+       | Create an account and record something
+       | to play on the radio! Or submit a recording
+       | for a longer song.
