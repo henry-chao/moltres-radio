@@ -5,7 +5,8 @@ html
     .navbar-fixed.red.lighten-1
       nav
         .nav-wrapper
-          .brand-logo.center Moltres Radio
+          a(href="/")
+            .brand-logo.center Moltres Radio
           ul.right
             {% if current_user.is_authenticated %}
             li
