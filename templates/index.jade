@@ -1,12 +1,13 @@
 doctype 5
 html
-  head
+  header
     title Moltres Radio
     link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
     link(rel="stylesheet",href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet",href="{{ main_css }}")
     script(src="https://code.jquery.com/jquery-3.2.1.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
-  body
+  main
     .navbar-fixed.red.lighten-1
       nav
         .nav-wrapper
@@ -32,3 +33,9 @@ html
            | Create an account and record something
            | to play on the radio! Or submit a recording
            | for a longer song.
+  footer.page-footer
+    .container.center-align
+      p.white-text Heyo!
+    .footer-copyright
+      .container
+        p Copyright 2017
