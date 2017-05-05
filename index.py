@@ -17,6 +17,8 @@ def index():
 
 @app.route("/login")
 def login():
+  if current_user.is_authenticated:
+    return redirect(url_for('index'))
   return render_template('login.jade', main_css = url_for('static',filename='main.css'))
 
 @app.route("/auth", methods=['POST'])
