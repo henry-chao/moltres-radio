@@ -3,7 +3,7 @@ block content
   .row.center-align
     h3 Create a New Account
   .row.center-align
-    form.col.s12.m12.l12(action="/auth", method="post",id="loginForm")
+    form.col.s12.m12.l12(action="/register_auth", method="post",id="registrationForm")
       .row
         .input-field.col.s5.offset-s3
           input.validate(id="username",type="text",name="username", required="", aria-required="true")
@@ -20,4 +20,4 @@ block content
           label(for="password") Verify Password
       .row
         .input-field.col.s4.offset-s4
-          button.waves-effect.waves-light.btn(type="submit") Register
+          a.waves-effect.waves-light.btn(onclick="validateAndSubmit();") Register
