@@ -1,7 +1,7 @@
 extends base
 block content
   .row.center-align
-    h3 Login to Your Account
+    h3 Create a New Account
   .row.center-align
     form.col.s12.m12.l12(action="/auth", method="post",id="loginForm")
       .row
@@ -15,7 +15,9 @@ block content
           input.validate(id="password",type="password",name="password", required="", aria-required="true")
           label(for="password") Password
       .row
+        .input-field.col.s6.offset-s3
+          input.validate(id="verify_password",type="password",name="verify_password", required="", aria-required="true")
+          label(for="password") Verify Password
+      .row
         .input-field.col.s4.offset-s4
-          button.waves-effect.waves-light.btn(type="submit") Login
-  .row.center-align
-    a.waves-effect.waves-light.btn(href="/register") Register
+          button.waves-effect.waves-light.btn(type="submit") Register

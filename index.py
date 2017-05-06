@@ -13,13 +13,23 @@ def load_user(username):
 
 @app.route("/")
 def index():
-  return render_template('index.jade', main_css = url_for('static',filename='main.css'))
+  return render_template('index.jade',
+    title = "Moltres Radio"
+  )
 
 @app.route("/login")
 def login():
   if current_user.is_authenticated:
     return redirect(url_for('index'))
-  return render_template('login.jade', main_css = url_for('static',filename='main.css'))
+  return render_template('login.jade',
+    title = "Moltres Radio - Login"
+  )
+
+@app.route("/register")
+def register():
+  return render_template('register.jade',
+    title = "Moltres Radio - Register"
+  )
 
 @app.route("/auth", methods=['POST'])
 def auth():
