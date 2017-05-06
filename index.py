@@ -32,6 +32,12 @@ def register():
     validatejs = True
   )
 
+@app.route("/registerSuccess")
+def registerSuccess():
+  return render_template('register_success.jade',
+    title = "Moltres Radio - Register Success"
+  )
+
 @app.route("/auth", methods=['POST'])
 def auth():
   if request.method == 'POST':
@@ -43,7 +49,7 @@ def auth():
 
 @app.route("/register_auth", methods=['POST'])
 def register_auth():
-  return redirect(url_for('login'))
+  return redirect(url_for('registerSuccess'))
 
 @app.route("/logout")
 def logout():
